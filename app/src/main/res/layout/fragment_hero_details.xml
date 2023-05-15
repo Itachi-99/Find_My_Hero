@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="heroDetailsViewModel"
+            type="com.example.findmyhero.herodetails.HeroDetailsViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Screen that displays all the details about the tapped hero">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".herodetails.HeroDetails">
+
+            <TextView
+                android:id="@+id/hero_name_textView"
+                style="@style/super_hero_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{heroDetailsViewModel.superheroType.name}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="SipderMan" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/title_image_background_cardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hero_name_textView">
+
+                <ImageView
+                    android:id="@+id/cover_hero_imageView"
+                    imageUrl="@{heroDetailsViewModel.superheroType.images.lg}"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:elevation="17dp"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/banner_spiderman" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_image_background_cardView">
+
+                <TextView
+                    android:id="@+id/heroPowerTitle_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Power"
+                    style="@style/super_hero_title_text"/>
+
+                <TextView
+                    android:id="@+id/heroPower_textView"
+                    android:text="@{@string/hero_power(heroDetailsViewModel.superheroType.powerstats.intelligence, heroDetailsViewModel.superheroType.powerstats.strength, heroDetailsViewModel.superheroType.powerstats.power, heroDetailsViewModel.superheroType.powerstats.durability,heroDetailsViewModel.superheroType.powerstats.power, heroDetailsViewModel.superheroType.powerstats.combat)}"
+                    tools:text="Powerstats"
+                    style="@style/title_info_text" />
+                <TextView
+                    android:id="@+id/heroBiographyTitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Biography"
+                    style="@style/super_hero_title_text"/>
+                <TextView
+                    android:id="@+id/heroBiography_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/title_info_text"
+                    android:fontFamily="@font/armata"
+                    android:text="@{@string/biography_info(heroDetailsViewModel.superheroType.biography.fullName, heroDetailsViewModel.superheroType.biography.alterEgos, heroDetailsViewModel.superheroType.biography.aliases, heroDetailsViewModel.superheroType.biography.placeOfBirth,heroDetailsViewModel.superheroType.biography.firstAppearance, heroDetailsViewModel.superheroType.biography.publisher, heroDetailsViewModel.superheroType.biography.alignment )}"
+                    tools:text="Biography" />
+
+                <TextView
+                    android:id="@+id/heroWorkTitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Work"
+                    style="@style/super_hero_title_text"/>
+                <TextView
+                    android:id="@+id/heroWork_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/title_info_text"
+                    android:fontFamily="@font/armata"
+                    android:text="@{@string/work_info(heroDetailsViewModel.superheroType.work.occupation, heroDetailsViewModel.superheroType.work.base)}"
+                    tools:text="Biography" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

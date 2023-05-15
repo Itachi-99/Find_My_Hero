@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "493519938784",
+    "project_id": "find-my-hero",
+    "storage_bucket": "find-my-hero.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493519938784:android:13b1e439a17366f7dedc85",
+        "android_client_info": {
+          "package_name": "com.example.findmyhero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493519938784-avp6knhtm91h3l8b04l20pbi7gm39m5q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCET-A6pXzFvT25FfV_S8xiqPU4qZYzg-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493519938784-avp6knhtm91h3l8b04l20pbi7gm39m5q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
