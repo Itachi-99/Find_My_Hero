@@ -17,7 +17,7 @@ val logging = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BOD
 val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(logging)
     .addInterceptor { chain ->
         val newRequest = chain.request().newBuilder()
-            .addHeader("X-RapidAPI-Key", "ce9eab9b4bmsh0663cc0f5f99061p12ecf0jsn3b2d6ef29cf1")
+            .addHeader("X-RapidAPI-Key", "Enter your own api key")
             .addHeader("X-RapidAPI-Host", "superhero-search.p.rapidapi.com")
             .build()
         chain.proceed(newRequest)
